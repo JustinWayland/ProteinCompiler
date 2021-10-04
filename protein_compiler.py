@@ -1,3 +1,6 @@
+import typing
+import random
+
 protein_codon = {
 	"A": ["GCU", "GCC", "GCA", "GCG"],
 	"R": ["CGU", "CGC", "CGA", "CGG", "AGA", "AGG"],
@@ -24,3 +27,15 @@ protein_codon = {
 }
 start_codons = ["AUG"]
 stop_codons = ["UAA", "UGA", "UAG"]
+
+def get_possible_start_codons() -> list[str]:
+	return start_codons
+
+def get_possible_stop_codons() -> list[str]:
+	return stop_codons
+
+def get_possible_amino_codons(protein_letter: str) -> list[str]:
+	return protein_codon[protein_letter]
+
+def choose_codon(possible_codons: list[str]) -> str:
+	return random.choice(possible_codons)

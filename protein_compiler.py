@@ -22,5 +22,5 @@ protein_codon = {
 	"Y": ["UAU", "UAC"],
 	"V": ["GUU", "GUC", "GUA", "GUG"]
 }
-start_codon = "AUG"
+start_codons = ["AUG"]
 stop_codons = ["UAA", "UGA", "UAG"]

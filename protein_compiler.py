@@ -39,3 +39,6 @@ def get_possible_amino_codons(protein_letter: str) -> list[str]:
 
 def choose_codon(possible_codons: list[str]) -> str:
 	return random.choice(possible_codons)
+
+def translate_amino_acid_to_codon(amino_acid: str) -> str:
+	return choose_codon(get_possible_amino_codons(amino_acid))

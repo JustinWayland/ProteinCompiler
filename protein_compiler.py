@@ -2,6 +2,12 @@ import typing
 import random
 import io
 
+# The char type is used here to represent a single element of a string.
+# Each amino acid is assumed to be exactly one char.
+# This is provided for the convenience of those looking to implement this in other
+# programming languages, as in Python characters and strings are interchangeable
+char = str
+
 protein_codon = {
 	"A": ["GCU", "GCC", "GCA", "GCG"],
 	"R": ["CGU", "CGC", "CGA", "CGG", "AGA", "AGG"],
@@ -35,13 +41,13 @@ def get_possible_start_codons() -> list[str]:
 def get_possible_stop_codons() -> list[str]:
 	return stop_codons
 
-def get_possible_amino_codons(protein_letter: str) -> list[str]:
+def get_possible_amino_codons(protein_letter: char) -> list[str]:
 	return protein_codon[protein_letter]
 
 def choose_codon(possible_codons: list[str]) -> str:
 	return random.choice(possible_codons)
 
-def translate_amino_acid_to_codon(amino_acid: str) -> str:
+def translate_amino_acid_to_codon(amino_acid: char) -> str:
 	return choose_codon(get_possible_amino_codons(amino_acid))
 
 def compile_protein_sequence(amino_acid_sequence: str) -> str:

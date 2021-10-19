@@ -1,5 +1,5 @@
 # ProteinCompiler
-Compiles a sequence of amino acids into a RNA sequence that is ready to be inserted into a genome
+Compiles a sequence of amino acids into a RNA sequence that is ready to be used to manufacture that protein.
 
 Invoke it as follows:
 ```

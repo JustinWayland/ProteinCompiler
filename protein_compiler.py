@@ -1,6 +1,7 @@
 import typing
 import random
 import io
+import sys
 
 # The char type is used here to represent a single element of a string.
 # Each amino acid is assumed to be exactly one char.
@@ -63,3 +64,14 @@ def compile_protein_sequence(amino_acid_sequence: str) -> str:
 	# into a protein.
 	output.write(choose_codon(get_possible_stop_codons()))
 	return output.getvalue()
+
+def main():
+	args = sys.argv[1:]
+	# Assume that the second argument is the protein sequence, and that there is a second argument. 
+	# This WILL change later.
+	protein_sequence = args[0].upper() # Uppercase the argument to reduce errors
+	# Also assume that every letter in the argument is valid
+	print(compile_protein_sequence(protein_sequence))
+	
+if __name__ == '__main__':
+	main()
